@@ -76,7 +76,7 @@ COnc=0.0417/0.82;
 VOCnc=0.0434/.82;
 
 %% Credits for displacement
-FGe= -1.*(TE.*EnergygenElecInternal ./ Efficiency+ TE.* NGinternalGen .*.0013)-Fuelgas.*btufuelgas;
+FGe= -1.*( Fuelgas.*btufuelgas -(TE.*EnergygenElecInternal ./ Efficiency+ TE.* NGinternalGen .*.0013));
 Che=-1.*charamount .* 13475; %13475 is the LHV char
 Ne=-1.*Naphthaamount .* 19320;
 crVOC= FGe.*(10.323/1e6)+Che .* (3.799.*1.026+2.524)/1e6+ Ne.* ( 3.799.*0.99 +22.198)/1e6 ; 
@@ -84,7 +84,6 @@ crN2O= FGe.*(1.418/1e6)+Che .* (0.078.* 1.026+0.098)/1e6+ Ne.* ( 0.078.*0.99 +0.
 crCH4= FGe.*(151.608/1e6)+Che .* (89.876.* 1.026+7.794)/1e6+ Ne.* ( 89.876.*0.99 +12.154)/1e6 ; 
 crCO=FGe.*(32.051/1e6)+Che .* (8.086.* 1.026+3.184)/1e6+ Ne.* ( 8.086.*0.99 +4.317)/1e6 ; 
 crCO2=FGe.*(6208/1e6)+Che .* (5267.* 1.026+4994)/1e6+ Ne.*( 5267.*0.99 +7145)/1e6 ; 
-
 
 
 
